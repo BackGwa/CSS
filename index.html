@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/GetMeal.js"></script>
+    <script src="script/Pretty_Support.js"></script>
+    <script src="script/Alarm.js"></script>
+
+    <title>Klaud APP</title>
+  </head>
+
+
+  <body>
+    
+    <!-- 메인 페이지 -->
+    <div class="mainpage">
+
+        <!-- 오늘 급식 -->
+          <div class="titlemove">
+            <div class="sub_title" id="sub_title">우리를 기다리게 하는</div>
+            <div class="main_title" id="main_title">오늘의 점심은</div>
+
+          <!-- 급식 정보 텍스트 -->
+          <div class="meal_title" id="meal_title">
+          </div>
+        </div>
+
+        <!-- 급식 정보 로드 -->
+        <div class="loadui">
+          <div id="bigemoji" class="bigemoji"></div>
+          <div class="load" id="load"></div>
+        </div>
+
+      <!-- 하단 독 -->
+      <div class="dockui">
+
+        <!-- 급식정보 독 버튼 -->
+        <div class="mealinfo">
+          <div class="rectangle-11"></div>
+          <svg class="meallist_icon" width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.7137 19.2914L15.8062 15.1989L5.65437 5.06148C3.39841 7.31745 3.39841 10.9762 5.65437 13.2466L11.7137 19.2914ZM21.5184 16.6739C23.731 17.7007 26.8402 16.9776 29.1395 14.6782C31.9016 11.9161 32.4367 7.95374 30.3109 5.82793C28.1995 3.71658 24.2371 4.23719 21.4606 6.9993C19.1612 9.29864 18.4382 12.4078 19.4649 14.6204L5.35069 28.7346L7.38973 30.7737L17.3536 20.8388L27.3029 30.7881L29.342 28.7491L19.3926 18.7997L21.5184 16.6739Z"
+            fill="#1E1E1E" />
+          </svg>
+          <div class="meallist_text">급식식단</div>
+        </div>
+
+        <!-- 시간표 독 버튼 -->
+        <div class="scheduler" onclick='alarm_open();'>
+          <div class="rectangle-13"></div>
+          <svg class="sche_icon" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.08335 18.6717V24.3383L17 29.75L26.9167 24.3383V18.6717L17 24.0833L7.08335 18.6717ZM17 4.25L1.41669 12.75L17 21.25L29.75 14.2942V24.0833H32.5834V12.75L17 4.25Z"
+              fill="#8C919E" />
+          </svg>
+          <div class="sche_text">시간표</div>
+        </div>
+
+        <!-- 더보기 독 버튼 -->
+        <div class="more" onclick='alarm_open();'>
+          <div class="rectangle-10"></div>
+          <svg class="more_icon" width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.78451 26.0303H28.9226C29.718 26.0303 30.3687 25.3796 30.3687 24.5842C30.3687 23.7888 29.718 23.1381 28.9226 23.1381H5.78451C4.98914 23.1381 4.33838 23.7888 4.33838 24.5842C4.33838 25.3796 4.98914 26.0303 5.78451 26.0303ZM5.78451 18.7997H28.9226C29.718 18.7997 30.3687 18.1489 30.3687 17.3536C30.3687 16.5582 29.718 15.9074 28.9226 15.9074H5.78451C4.98914 15.9074 4.33838 16.5582 4.33838 17.3536C4.33838 18.1489 4.98914 18.7997 5.78451 18.7997ZM4.33838 10.1229C4.33838 10.9183 4.98914 11.569 5.78451 11.569H28.9226C29.718 11.569 30.3687 10.9183 30.3687 10.1229C30.3687 9.32755 29.718 8.67679 28.9226 8.67679H5.78451C4.98914 8.67679 4.33838 9.32755 4.33838 10.1229Z"
+              fill="#8C919E" />
+          </svg>
+          <div class="more_text">더보기</div>
+        </div>
+
+      </div>
+      
+      <!-- 알림 표시 -->
+      <div class="blackback blur7" id="blackback"></div>
+      <div class="erroralarm" id="erroralarm">
+        <div class="alarmui">
+          <div class="titlebox">아직 보여드리기<br>멀었어요!</div>
+          <div class="subtitlebox">선택한 서비스는 개발 중이에요.<br>빠른 시일 내에 서비스 운영을 시작할게요.</div>
+          <div class="buttonbox" onclick='alarm_close();'></div>
+          <div class="buttontext" onclick='alarm_close();'>알겠어요,</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 급식정보 자동 가져오기 스크립트 -->
+    <script>
+
+      const getMeal = async () => {
+        const meal = await Meal_Request('high', 'N100000164');
+        const mealElement = document.getElementById("meal_title");
+        const txtA = document.querySelector('.sub_title');
+        const txtB = document.querySelector('.main_title');
+
+        mealElement.innerHTML = meal.join("<br>");
+        txtA.classList.add('playanimated_fadetextA');
+        txtB.classList.add('playanimated_fadetextB');
+        mealElement.classList.add('playanimated_fadetextC');
+        PageRefrash('bigemoji', 'load', false);
+
+      }
+
+      PageRefrash('bigemoji', 'load', true);
+      getMeal();
+
+    </script>
+
+  </body>
+
+</html>
