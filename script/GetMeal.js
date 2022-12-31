@@ -25,7 +25,7 @@ const GetmealZone = (data) => {
 
 const mealZone = (data) => {
   let mealzone = GetmealZone(data);
-  result = mealzone !== 'None' ? [...data['menu'][0][mealzone]] : ['급식 정보가 존재하지 않는다는 것'];
+  result = mealzone !== 'None' ? [...data['menu'][0][mealzone]] : [''];
   return result;
 };
 
