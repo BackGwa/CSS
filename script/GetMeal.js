@@ -25,7 +25,7 @@ const GetmealZone = (data) => {
 
 const mealZone = (data) => {
   let mealzone = GetmealZone(data);
-  result = mealzone !== 'None' ? [...data['menu'][0][mealzone]] : ['급식 정보가 존재하지 않습니다.'];
+  result = mealzone !== 'None' ? [...data['menu'][0][mealzone]] : ['급식 정보가 존재하지 않는다는 것'];
   return result;
 };
 
@@ -44,7 +44,7 @@ const Meal_Request = async (schoolType, schoolCode, date = nowdate()) => {
 
 /** NowDate => Function to get the current date into an array */
 const nowdate = () => {
-  return [new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate() - 1]
+  return [new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate()]
 }
 
 const MealZone_ChangeText = (mealZone) => {
