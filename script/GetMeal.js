@@ -1,5 +1,7 @@
 // Source code derived from the 'JohnSon with JS' project.
 
+
+/** GetmealZone => 현재 시간을 기반으로 하여 알맞은 급식 시간대를 반환합니다. */
 const GetmealZone = (data) => {
 
   let mealzone = '';
@@ -23,13 +25,14 @@ const GetmealZone = (data) => {
 
 }
 
+/** mealZone => 급식 정보를 파싱하여 반환합니다. */
 const mealZone = (data) => {
   let mealzone = GetmealZone(data);
   result = mealzone !== 'None' ? [...data['menu'][0][mealzone]] : [''];
   return result;
 };
 
-/** Meal_Request => Returns the proper School Meal Information for the input. */
+/** Meal_Request => 파라미터에 입력 된 값을 기반으로 API에 요청하고 그 정보를 파싱하여 반환합니다. */
 const Meal_Request = async (schoolType, schoolCode, date = nowdate()) => {
   const API = `https://schoolmenukr.ml/api/${schoolType}/${schoolCode}?year=${date[0]}&month=${date[1]}&date=${date[2]}&allergy=hidden`;
   const response = await fetch(API);
@@ -42,11 +45,12 @@ const Meal_Request = async (schoolType, schoolCode, date = nowdate()) => {
 
 };
 
-/** NowDate => Function to get the current date into an array */
+/** NowDate => 오늘 날짜를 배열로 반환합니다. */
 const nowdate = () => {
   return [new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate()]
 }
 
+/** MealZone_ChangeText => 급식 시간대에 따라 사용자에게 표시되는 텍스트를 수정합니다. */
 const MealZone_ChangeText = (mealZone) => {
   
   const subText = document.getElementById('sub_title');
