@@ -43,6 +43,3 @@ const fullscreen = element => {
   if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
   if (element.msRequestFullscreen) return element.msRequestFullscreen()
 }
-
-const FullScreenElement = document.getElementById('mainpage');
-fullscreen(FullScreenElement);
