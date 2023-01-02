@@ -38,7 +38,10 @@ const PageRefrash = (emoji, message, iscreate) => {
 }
 
 const fullscreen = element => {
-    element.documentElement.requestFullscreen();
+  if (element.requestFullscreen) return element.requestFullscreen()
+  if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen()
+  if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
+  if (element.msRequestFullscreen) return element.msRequestFullscreen()
 }
 
 const FullScreenElement = document.getElementById('mainpage');
