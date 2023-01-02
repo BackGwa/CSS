@@ -28,7 +28,8 @@ const GetmealZone = (data) => {
 /** mealZone => 급식 정보를 파싱하여 반환합니다. */
 const mealZone = (data) => {
   let mealzone = GetmealZone(data);
-  result = mealzone !== 'None' ? [...data['menu'][0][mealzone]] : [''];
+  let result = mealzone !== 'None' ? [...data['menu'][0][mealzone]] : [''];
+
   return result;
 };
 
@@ -38,7 +39,6 @@ const Meal_Request = async (schoolType, schoolCode, date = nowdate()) => {
   const response = await fetch(API);
   const data = await response.json();
   const result = mealZone(data);
-
   MealZone_ChangeText(GetmealZone(data));
 
   return result;
