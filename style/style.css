@@ -12,6 +12,7 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
+
     .mainpage{
         background-color: #1e1e1e;
     }
