@@ -36,10 +36,3 @@ const PageRefrash = (emoji, message, iscreate) => {
     }
     return 1
 }
-
-const fullscreen = element => {
-  if (element.requestFullscreen) return element.requestFullscreen()
-  if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen()
-  if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
-  if (element.msRequestFullscreen) return element.msRequestFullscreen()
-}
