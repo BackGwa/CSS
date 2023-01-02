@@ -19,20 +19,63 @@
     <!-- 메인 페이지 -->
     <div class="mainpage">
 
-        <!-- 오늘 급식 -->
-          <div class="titlemove">
-            <div class="sub_title" id="sub_title">(｡´-д-)</div>
-            <div class="main_title" id="main_title">오늘은 식판이<br>비어있네요</div>
+      <div class="mealScreen">
 
-            <!-- 급식 정보 텍스트 -->
-            <div class="meal_title" id="meal_title"></div>
+        <!-- 급식 정보 알림 표시 -->
+        <div class="Infotitle">
+          
+          <div class="sub_title" id="sub_title">(｡´-д-)</div>
+          <div class="main_title" id="main_title">오늘은 식판이<br>비어있네요</div>
+
+          <div class="datebox">
+            <div class="date" id="date">#월 #일 (#)</div>
+  
+            <!-- 날짜 정보 스크립트 -->
+            <script>
+              var weekday = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+              date = new Date();
+              month = date.getMonth() + 1;
+              day = date.getDate();
+              let week = weekday[date.getDay()];
+              document.getElementById("date").innerHTML = month + '월 ' + day + '일 ' + week
+            </script>
+          </div>
+
+        <!-- 급식 정보 리스트 -->
+        <div class="meallist">
+
+          <!-- 아침 -->
+          <div class="bf">
+            <div class="bf_title">아침</div>
+            <div class="bf_info">내용1</div>
+          </div>
+
+          <!-- 점심 -->
+          <div class="lc">
+            <div class="lc_title">점심</div>
+            <div class="lc_info">내용2</div>
+          </div>
+
+          <!-- 저녁 -->
+          <div class="dr">
+            <div class="lc_title">저녁</div>
+            <div class="lc_info">내용3</div>
+          </div>
+
         </div>
 
-        <!-- 급식 정보 로드 -->
+        </div>
+        
+      </div>
+
+        <!-- <div class="titlemove">
+            <div class="meal_title" id="meal_title"></div>
+        </div>
         <div class="loadui">
             <div id="bigemoji" class="bigemoji"></div>
             <div class="load" id="load"></div>
-        </div>
+        </div> -->
+
 
       <!-- 하단 독 -->
       <div class="dockui">
