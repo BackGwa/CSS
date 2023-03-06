@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable.css");
 
 .Pretendard {
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 }
 
 body {
@@ -31,7 +31,7 @@ body {
         color: #ffffff;
     }
     .meallist_text{
-      font-family: 'Pretendard';
+      font-family: 'Pretendard Variable';
       font-size: 14px;
       font-weight: 500;
       margin-bottom: 15px;
@@ -67,7 +67,7 @@ body {
         color: #1e1e1e;
     }
     .meallist_text{
-      font-family: 'Pretendard';
+      font-family: 'Pretendard Variable';
       font-size: 14px;
       font-weight: 500;
       margin-bottom: 15px;
@@ -99,7 +99,7 @@ body {
 
 .main_title {
   text-align: center;
-  font: 700 clamp(1rem, 9vw, 4rem) 'Pretendard', sans-serif;
+  font: 700 clamp(1rem, 9vw, 4rem) 'Pretendard Variable', sans-serif;
   position: relative;
   left: 50%;
   opacity: 0.0;
@@ -108,7 +108,7 @@ body {
 
 .sub_title {
   text-align: center;
-  font: 400 clamp(.5rem, 5vw, 2rem) 'Pretendard', sans-serif;
+  font: 400 clamp(.5rem, 5vw, 2rem) 'Pretendard Variable', sans-serif;
   position: relative;
   left: 50%;
   opacity: 0.0;
@@ -127,7 +127,7 @@ body {
 
 .meal_title {
   text-align: center;
-  font: 300 clamp(.5rem, 5vw, 2rem) 'Pretendard', sans-serif;
+  font: 300 clamp(.5rem, 5vw, 2rem) 'Pretendard Variable', sans-serif;
   position: relative;
   margin-top: clamp(.5rem, 5.5vw, 1.2rem);
   left: 50%;
@@ -150,7 +150,7 @@ body {
 }
 
 .load {
-  font: 600 clamp(.5rem, 6.5vw, 3.5rem) 'Pretendard', sans-serif;
+  font: 600 clamp(.5rem, 6.5vw, 3.5rem) 'Pretendard Variable', sans-serif;
 }
 
 .dockui {
@@ -180,14 +180,14 @@ body {
 }
 
 .meallist_text{
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable';
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 15px;
 }
 
 .sche_text, .more_text {
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable';
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 15px;
@@ -363,7 +363,7 @@ body {
 
 .titlebox {
   text-align: left;
-  font: 700 38px 'Pretendard', sans-serif;
+  font: 700 38px 'Pretendard Variable', sans-serif;
   position: absolute;
   left: calc(50% - 143px);
   top: calc(50% - 138.5px);
@@ -371,7 +371,7 @@ body {
 
 .subtitlebox {
   text-align: left;
-  font: 500 17px 'Pretendard', sans-serif;
+  font: 500 17px 'Pretendard Variable', sans-serif;
   opacity: 0.5;
   position: absolute;
   left: calc(50% - 146px);
@@ -393,7 +393,7 @@ body {
 .buttontext {
   color: #f8f8f8;
   text-align: left;
-  font: 600 20px 'Pretendard', sans-serif;
+  font: 600 20px 'Pretendard Variable', sans-serif;
   position: absolute;
   left: calc(50% - 38px);
   top: calc(50% - -94.5px);
