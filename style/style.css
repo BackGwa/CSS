@@ -17,6 +17,9 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
+    body{
+      background-color: #1e1e1e;
+    }
     .mainpage{
         background-color: #1e1e1e;
     }
@@ -53,6 +56,9 @@ body {
 }
 
 @media (prefers-color-scheme: light) {
+    body{
+      background-color: #fbfbfb;
+    }
     .mainpage{
         background-color: #ffffff;
     }
