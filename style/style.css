@@ -1,5 +1,18 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable.css");
-@import url('https://cdn.jsdelivr.net/gh/toss/tossface/dist/tossface.css');
+@font-face {
+  font-family: "Tossface";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("font/TossFaceFontMac.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard Variable'), url('font/PretendardVariable.ttf') format("truetype");
+}
 
 body {
   -webkit-user-select:none;
@@ -105,39 +118,39 @@ body {
 }
 
 .main_title {
-  text-align: center;
-  font: 700 clamp(1rem, 9vw, 4rem) 'Pretendard Variable', sans-serif;
+  text-align: left;
+  font: 800 clamp(1.1rem, 9.1vw, 4.1rem) 'Pretendard Variable', sans-serif;
   position: relative;
-  left: 50%;
+  left: 25%;
   opacity: 0.0;
   transform: translateX(-50%);
 }
 
 .sub_title {
-  text-align: center;
-  font: 400 clamp(.5rem, 5vw, 2rem) 'Pretendard Variable', sans-serif;
+  text-align: left;
+  font: 600 clamp(.5rem, 4.6vw, 2.0rem) 'Pretendard Variable', sans-serif;
   position: relative;
-  left: 50%;
+  left: 25%;
   opacity: 0.0;
   transform: translateX(-50%);
 }
 
 .titlemove {
   position: absolute;
-  top: 45%;
+  top: 47%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -47%);
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
 .meal_title {
-  text-align: center;
-  font: 300 clamp(.5rem, 5vw, 2rem) 'Pretendard Variable', sans-serif;
+  text-align: left;
+  font: 400 clamp(.5rem, 5vw, 1.75rem) 'Pretendard Variable', sans-serif;
   position: relative;
-  margin-top: clamp(.5rem, 5.5vw, 1.2rem);
-  left: 50%;
+  margin-top: clamp(.2rem, 4vw, 0.5rem);
+  left: 25%;
   opacity: 0.0;
   transform: translateX(-50%);
 }
@@ -153,11 +166,12 @@ body {
 }
 
 .bigemoji {
-  font-size: clamp(.5rem, 30vw, 9rem);
+  font-size: clamp(.55rem, 30vw, 8rem);
 }
 
 .load {
-  font: 600 clamp(.5rem, 6.5vw, 3.5rem) 'Pretendard Variable', sans-serif;
+  font: 650 clamp(.5rem, 6.5vw, 4rem) 'Pretendard Variable', sans-serif;
+  margin-top: 8%;
 }
 
 .dockui {
@@ -221,50 +235,45 @@ body {
   backdrop-filter: blur(7px);
 }
 
-@keyframes textconfirmA{
+@keyframes textconfirmA {
   0% {
-    -webkit-backdrop-filter: blur(10px);
+    -webkit-filter: blur(15px);
     opacity: 0.0;
-    transform: translate(-50%, -20px);
+    transform: translate(-100%, 0px);
   }
+
   100% {
-    -webkit-backdrop-filter: blur(0px);
+    -webkit-filter: blur(0px);
     opacity: 1.0;
     transform: translate(-50%, 0px);
   }
 }
 
-@keyframes textconfirmB{
-  0%{
-    -webkit-backdrop-filter: blur(5px);
+@keyframes textconfirmB {
+  0% {
+    -webkit-filter: blur(30px);
     opacity: 0.0;
-    transform: translate(-50%, -20px);
+    transform: translate(-100%, 0px);
   }
-  25% {
-    -webkit-backdrop-filter: blur(5px);
-    opacity: 0.0;
-    transform: translate(-50%, -20px);
-  }
-  75%{
-    -webkit-backdrop-filter: blur(2.5px);
-    opacity: 0.7;
-    transform: translate(-50%, 0px);
-  }
+
   100% {
-    -webkit-backdrop-filter: blur(0px);
+    -webkit-filter: blur(0px);
     opacity: 1.0;
-    transform: translate(-50%, 0px);
+    transform: translateY(-50%, 0px);
   }
 }
 
-@keyframes textcxm{
+@keyframes textcxm {
   0% {
-    -webkit-backdrop-filter: blur(2px);
+    -webkit-filter: blur(15px);
     opacity: 0.0;
+    transform: translate(-100%, 0px);
   }
+
   100% {
-    -webkit-backdrop-filter: blur(0px);
+    -webkit-filter: blur(0px);
     opacity: 1.0;
+    transform: translate(-50%, 0px);
   }
 }
 
@@ -318,6 +327,43 @@ body {
   }
 }
 
+@keyframes sizeup {
+  0% {
+    -webkit-filter: blur(0px);
+    opacity: 1.0;
+    transform: translate(-50%, -65%);
+  }
+
+  20% {
+    opacity: 1.0;
+  }
+
+  100% {
+    -webkit-filter: blur(100px);
+    opacity: 0.0;
+    transform: translate(100%, -65%);
+  }
+}
+
+@keyframes iconload {
+  0% {
+    opacity: 0.0;
+    -webkit-filter: blur(50px);
+    transform: translate(0%, -75%);
+  }
+
+  50% {
+    opacity: 0.15;
+    -webkit-filter: blur(5px);
+  }
+
+  100% {
+    opacity: 1.0;
+    -webkit-filter: blur(0px);
+    transform: translate(0%, 0%);
+  }
+}
+
 .playanimated_f {
   animation: alarm_show_dialog .6s ease-in-out forwards;
 }
@@ -335,15 +381,23 @@ body {
 }
 
 .playanimated_fadetextA {
-  animation: textconfirmB 0.75s ease-in-out forwards;
+  animation: textconfirmB 0.25s ease-out forwards;
 }
 
 .playanimated_fadetextB {
-  animation: textconfirmA 0.5s ease-in-out forwards;
+  animation: textconfirmA 0.35s ease-out forwards;
 }
 
 .playanimated_fadetextC {
-  animation: textcxm 1.5s ease-in-out forwards;
+  animation: textcxm 0.4s ease-out forwards;
+}
+
+.playanimated_sizeup {
+  animation: sizeup 0.35s ease-in-out forwards;
+}
+
+.playanimeted_logo {
+  animation: iconload 0.25s ease-in-out forwards;
 }
 
 .erroralarm {

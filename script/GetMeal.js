@@ -66,7 +66,7 @@ const MealZone_ChangeText = (mealZone) => {
       mainText.innerHTML = '오늘의 점심은'
       break;
     case 'dinner':
-      subText.innerHTML = '오늘의 마지막을 장식할'
+      subText.innerHTML = '마지막을 장식할'
       mainText.innerHTML = '오늘의 저녁은'
       break;
   }
