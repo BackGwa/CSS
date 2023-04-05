@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="style/style.css">
-    <script src="script/GetMeal.js"></script>
-    <script src="script/Pretty_Support.js"></script>
-    <script src="script/Alarm.js"></script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="style/meal.css">
+    <script src="./script/meal/Pretty_Support.js"></script>
+    <script src="./script/meal/GetMeal.js"></script>
+    <script src="./script/Alarm.js"></script>
 
     <title>Klaud</title>
     <link rel="shortcut icon" href="./favicon.ico">
@@ -48,7 +50,7 @@
         </div>
 
         <!-- 시간표 독 버튼 -->
-        <div class="scheduler" onclick='alarm_open();'>
+        <div class="scheduler" onclick="location.href='./timetable.html'">
           <div class="rectangle-13"></div>
           <svg class="sche_icon" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.08335 18.6717V24.3383L17 29.75L26.9167 24.3383V18.6717L17 24.0833L7.08335 18.6717ZM17 4.25L1.41669 12.75L17 21.25L29.75 14.2942V24.0833H32.5834V12.75L17 4.25Z"
